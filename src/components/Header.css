@@ -1,0 +1,53 @@
+.header {
+  background-color: #72231C;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-center {
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-family: 'Jockey One';
+  letter-spacing: 0.1rem;
+  user-select: none;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Pathway Extreme';
+  padding: 0.3rem 0.5rem;
+  position: relative;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  border: 2px solid #036977; /* okvir umesto boje teksta */
+  border-radius: 4px;
+  color: white;
+}
+.nav-link.active,
+.nav-link:hover {
+  background-color: #036977; /* ispunjeni okvir */
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
