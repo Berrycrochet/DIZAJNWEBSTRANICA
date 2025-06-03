@@ -1,0 +1,172 @@
+/* Osnovni reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(../images/background.png);
+}
+
+/* Glavni kontejner aplikacije - puni ekran i raspoređuje header, main i footer */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glavni sadržaj između headera i footera */
+.app-content {
+  flex: 1; /* zauzima sav raspoloživi prostor */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* centriranje horiz */
+}
+
+/* Header */
+header {
+  background-color: #72231C;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 1rem;
+}
+
+/* Leva navigacija u headeru */
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Linkovi u navigaciji sa punim borderom */
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Na hover i aktivan link - border punjene boje i pozadina iste boje sa manjom providnošću */
+nav a:hover,
+nav a.active {
+  border-color: #036977;
+  background-color: rgba(3, 105, 119, 0.2);
+  color: #036977;
+}
+
+/* Centar u headeru - tekst BACKSTAGE CAFFE */
+.header-center {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 1.5px;
+}
+
+/* Footer */
+footer {
+  background-color: #72231C;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Lijevi deo sa društvenim mrežama - jedna ispod druge */
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Linkovi društvenih mreža sa ikonama (ako se dodaju) */
+.footer-socials a {
+  color: #036977;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: rgba(3, 105, 119, 0.2);
+  border-color: #036977;
+  color: #036977;
+}
+
+/* Desni deo sa logom */
+.footer-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  align-self: center; /* vertikalno centriraj logo */
+  user-select: none;
+}
+
+/* Crta i tekst ispod footer-a */
+.footer-bottom {
+  width: 100%;
+  border-top: 1px solid #036977;
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: white;
+  user-select: none;
+}
+
+/* Responsive za manje ekrane */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-socials {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .footer-logo {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Dodatno: Footer u dnu stranice - jer .app koristi flex i .app-content raste */
+
+
+
+
