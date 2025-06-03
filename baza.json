@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": "2bba",
+      "name": "Kenan Dedic",
+      "email": "kenanlol@hotmail.com",
+      "password": "123456",
+      "role": "korisnik"
+    }
+  ]
+}
