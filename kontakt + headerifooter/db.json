@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": "dd92",
+      "ime": "Narcisa ",
+      "email": "narcisa.hadzajlic@dl.unze.ba",
+      "password": "1234",
+      "role": "guest"
+    },
+    {
+      "id": "7c2a",
+      "ime": "Novi Korisnik",
+      "email": "novi@gmail.com",
+      "password": "123456",
+      "role": "guest"
+    },
+    {
+      "id": "76ff",
+      "ime": "Jos jedan",
+      "email": "josNeki@unze.ba",
+      "password": "321",
+      "role": "guest"
+    }
+  ],
+  "messages": [
+    {
+      "id": "908c",
+      "ime": "Narcisa ",
+      "email": "narcisa.hadzajlic@dl.unze.ba",
+      "poruka": "Ova stranica je fantastična!",
+      "datum": "5/19/2025, 10:26:02 PM"
+    },
+    {
+      "id": "6c8b",
+      "ime": "Ajna",
+      "email": "ajna@gmail.com",
+      "poruka": "Testtt",
+      "datum": "6/6/2025, 12:52:14 AM"
+    }
+  ]
+}

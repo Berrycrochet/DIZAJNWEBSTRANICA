@@ -1,0 +1,48 @@
+.header {
+  background-color: #72231C;
+  padding: 1rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-center {
+  font-size: 1.6rem;
+  font-family: 'Jockey One', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  transform: translateX(-20px);
+}
+
+.nav-link {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0.4rem 0.9rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Pathway Extreme', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #036977;
+  color: white;
+  cursor: pointer;
+}
