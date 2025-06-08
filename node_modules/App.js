@@ -1,0 +1,68 @@
+﻿import { useState } from 'react';
+import LoginForma from './components/LoginForma';
+import './components/loginstil.css'; 
+import RegisterForma from './components/RegisterForma';
+function App() {
+    const [currentUser, setCurrentUser] = useState(null);
+    const [showLogin, setShowLogin] = useState(true);
+
+    const handleLogin = (user) => {
+        localStorage.setItem('ulogovaniKorisnik', JSON.stringify(user));
+        setCurrentUser(user);
+    };
+
+    const handleRegister = (user) => {
+        localStorage.setItem('ulogovaniKorisnik', JSON.stringify(user));
+        setCurrentUser(user);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('ulogovaniKorisnik');
+        setCurrentUser(null);
+    };
+
+    return (
+        <div className="app">
+            <nav>
+                {currentUser ? (
+                    <div>
+                        <span>Dobrodošli, {currentUser.ime}</span>
+                        <button onClick={handleLogout}>Odjava</button>
+                    </div>
+                ) : (
+                    <div className="auth-options">
+                        <button
+                            onClick={() => setShowLogin(true)}
+                            className={showLogin ? 'active' : ''}
+                        >
+                            Prijava
+                        </button>
+                        <button
+                            onClick={() => setShowLogin(false)}
+                            className={!showLogin ? 'active' : ''}
+                        >
+                            Registracija
+                        </button>
+                    </div>
+                )}
+            </nav>
+
+            <main>
+                {!currentUser ? (
+                    showLogin ? (
+                        <LoginForma onLogin={handleLogin} />
+                    ) : (
+                        <RegisterForma onRegister={handleRegister} />
+                    )
+                ) : (
+                    <div>
+                        <h1>Dobrodošli {currentUser.uloga}!</h1>
+                        
+                    </div>
+                )}
+            </main>
+        </div>
+    );
+}
+
+export default App;

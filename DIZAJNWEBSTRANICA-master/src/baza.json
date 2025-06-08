@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "9984",
+      "email": "jesil@gmail.com",
+      "password": "123456",
+      "uloga": "korisnik"
+    },
+    {
+      "id": "bc44",
+      "email": "helvida123@gmail.com",
+      "password": "123456",
+      "uloga": "korisnik"
+    },
+    {
+      "id": "ee6f",
+      "email": "helvida123@gmail.com",
+      "password": "123456",
+      "uloga": "korisnik"
+    }
+  ],
+  "messages": [
+    {
+      "id": "908c",
+      "ime": "Narcisa ",
+      "email": "narcisa.hadzajlic@dl.unze.ba",
+      "poruka": "Ova stranica je fantastična!",
+      "datum": "5/19/2025, 10:26:02 PM"
+    },
+    {
+      "id": "6c8b",
+      "ime": "Ajna",
+      "email": "ajna@gmail.com",
+      "poruka": "Testtt",
+      "datum": "6/6/2025, 12:52:14 AM"
+    },
+    {
+      "id": "255c",
+      "ime": "berina",
+      "email": "helvida123@gmail.com",
+      "poruka": "2 stola za 10 ljudi",
+      "datum": "08. 06. 2025. 14:27:39"
+    }
+  ]
+}

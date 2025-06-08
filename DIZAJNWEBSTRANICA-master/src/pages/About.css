@@ -1,0 +1,120 @@
+/* --- Glavni wrapper za "O nama" stranicu --- */
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f0e3; /* Lagana bež pozadina */
+    color: #6b4a43; /* Glavna boja teksta (smeđa) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px; /* Povećan padding za prozračnost */
+    box-sizing: border-box;
+}
+
+/* --- Sekcija sa sadržajem (tekst + galerija) --- */
+.about-content-section {
+    display: flex;
+    flex-direction: column; /* Tekst iznad slika na mobilnom */
+    gap: 40px; /* Povećan razmak između teksta i galerije */
+    max-width: 1200px; /* Širina cijele sekcije */
+    margin: 0 auto;
+    background-color: #fff9e6; /* Svjetlija bež pozadina za sadržaj */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(114, 35, 28, 0.25); /* Elegantnija sjena */
+    padding: 50px; /* Velikodušan padding unutar sekcije */
+    transition: box-shadow 0.3s ease;
+}
+
+.about-content-section:hover {
+    box-shadow: 0 12px 30px rgba(114, 35, 28, 0.4); /* Jača sjena na hover */
+}
+
+/* --- Kontejner za tekst --- */
+.about-text-container {
+    text-align: center; /* Centriraj tekst */
+    max-width: 800px; /* Kontroliraj širinu teksta */
+    margin: 0 auto; /* Centriraj tekstualni blok */
+}
+
+.about-text-container h2 {
+    font-size: 3.2em; /* Velik i uočljiv naslov */
+    color: #72231C; /* Tamno crvena/bordo */
+    margin-bottom: 25px;
+    text-shadow: 1.5px 1.5px 3px #9b6f69cc;
+    font-weight: 700;
+}
+
+.about-text-container p {
+    font-size: 1.15em; /* Lako čitljiv font za paragraf */
+    line-height: 1.8; /* Povećan line-height za prozračnost */
+    color: #5b3d35; /* Tamnija smeđa za tekst */
+    margin-bottom: 20px; /* Razmak između paragrafa */
+    font-weight: 400; /* Normalna težina fonta */
+}
+
+/* --- Galerija slika --- */
+.about-image-gallery {
+    display: grid; /* Koristimo CSS Grid za fleksibilan raspored slika */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Prilagodljive kolone */
+    gap: 25px; /* Razmak između slika */
+    justify-content: center; /* Centriraj slike */
+}
+
+.gallery-img {
+    width: 100%; /* Slike zauzimaju cijelu širinu kolone */
+    height: 250px; /* Fiksna visina za uniformnost */
+    object-fit: cover; /* Slike popunjavaju prostor, ali se ne deformišu */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(114, 35, 28, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: translateY(-5px) scale(1.02); /* Lagani pomak i blago povećanje */
+    box-shadow: 0 10px 25px rgba(114, 35, 28, 0.35);
+}
+
+/* --- Animacija za pojavljivanje (ako je koristiš u App.css) --- */
+.animate-fadein {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Media Queries za responzivnost --- */
+@media (min-width: 768px) {
+    .about-content-section {
+        flex-direction: row; /* Tekst i galerija jedan pored drugog */
+        align-items: flex-start; /* Poravnaj elemente na vrhu */
+        padding: 60px; /* Više paddinga na većim ekranima */
+    }
+
+    .about-text-container {
+        flex: 1; /* Tekst zauzima dostupan prostor */
+        text-align: left; /* Poravnaj tekst lijevo */
+        margin-right: 50px; /* Razmak između teksta i galerije */
+    }
+
+    .about-image-gallery {
+        flex: 1; /* Galerija zauzima dostupan prostor */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Prilagodljive kolone za galeriju */
+        max-width: 600px; /* Ograniči širinu galerije ako je potrebno */
+    }
+
+    .about-text-container h2 {
+        font-size: 3.8em; /* Veći naslov na desktopu */
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-content-section {
+        padding: 80px; /* Još više paddinga za veće ekrane */
+    }
+    .about-text-container h2 {
+        font-size: 4.5em;
+    }
+}
