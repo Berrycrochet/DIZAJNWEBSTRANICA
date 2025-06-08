@@ -65,6 +65,7 @@ Projekt se sastoji od sljedećih ključnih dijelova:
 
 ### 🎨 Paleta boja:
 > Kombinacija toplih nijansi bež, narandžaste i bordo tonova (`#FAF0D7`, `#EAA44F`, `#72231C`, `#036977`).
+> ![Paleta boja](DIZAJNWEBSTRANICA-master/src/images/Paletaboja.png)
 
 ### 🔤 Fontovi:
 - **Pathway Extreme**
