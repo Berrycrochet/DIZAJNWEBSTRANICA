@@ -18,9 +18,11 @@ Projekat demonstrira cjelokupan proces izrade i objave moderne web aplikacije �
 Poseban naglasak stavljen je na jednostavno korisničko iskustvo i povezivanje digitalnog i stvarnog ambijenta kafića.
 
 Članovi tima:
-Berina Helvida
-Ajna Oparić
-Kenan Dedić
+- Berina Helvida
+- Ajna Oparić
+- Kenan Dedić
+
+
 ---
 
 ## 🧰 Tehnologije i alati
