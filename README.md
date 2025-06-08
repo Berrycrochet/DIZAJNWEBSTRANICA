@@ -52,6 +52,7 @@ Projekt se sastoji od sljedećih ključnih dijelova:
 - Lokalna baza podataka (`baza.json`)
 - Routing (`React Router DOM`)
 - Google Maps integracija
+- Burger meni koji je značajan za responzivan dizajn
 
 ---
 
