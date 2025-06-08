@@ -1,0 +1,229 @@
+/* --- Glavni kontejner stranice --- */
+.shows-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f0e3; /* Lagana bež pozadina za cijelu stranicu */
+    color: #6b4a43; /* Osnovna boja teksta (smeđa) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Hero Sekcija (Mala Visina, Široka, Naslov i Slika desno) --- */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* JOŠ MANJI VERTILKALNI PADDING za vrlo malu visinu */
+    background-color: #fff9e6;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(114, 35, 28, 0.2);
+    margin: 2rem auto;
+    max-width: 1200px; /* JOŠ VEĆA ŠIRINA SEKCJE */
+    transition: box-shadow 0.3s ease;
+    min-height: 150px; /* MINIMALNA VISINA HERO SEKCIJE */
+}
+
+.hero-section:hover {
+    box-shadow: 0 10px 25px rgba(114, 35, 28, 0.35);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Zadano za manje ekrane: tekst iznad slike */
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 900px; /* Maksimalna širina sadržaja unutar hero sekcije */
+}
+
+.hero-title {
+    /* VRLO MALI FONT-SIZE za naslov - KAKO SI TRAŽIO/LA */
+    font-size: 1.8em; /* Malen font za mobilne, skoro kao podnaslov */
+    color: #72231C;
+    margin-bottom: 10px; /* Mali razmak između naslova i slike na mobilnom */
+    text-shadow: 1px 1px 2px #9b6f69cc; /* Suptilnija sjena teksta */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-image-side {
+    width: 100%;
+    max-width: 200px; /* Još malo smanjena maksimalna širina slike/loga */
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* --- Opći stilovi za naslove sekcija --- */
+.section-title {
+    font-size: 2.2rem; /* I dalje konzistentno */
+    color: #72231C;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1.5px 1.5px 3px #9b6f69cc;
+    font-weight: 700;
+}
+
+/* --- Sekcija najava koncerata (Popis svirki) --- */
+.gallery-section {
+    padding: 50px 20px;
+    background-color: #fff9e6;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(114, 35, 28, 0.2);
+    margin: 2rem auto;
+    max-width: 1200px; /* POVEĆANA ŠIRINA OVE SEKCJE */
+}
+
+.show-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.show-item {
+    background-color: #fdf6ed;
+    margin-bottom: 15px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(114, 35, 28, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: #5b3d35;
+    font-weight: 600;
+    border: 1px solid rgba(114, 35, 28, 0.1);
+}
+
+.show-item:hover {
+    transform: translateY(-3px);
+    background-color: #f2dfc8;
+    box-shadow: 0 6px 15px rgba(114, 35, 28, 0.25);
+}
+
+/* Galerija unutar stavke najave */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 160px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(114, 35, 28, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(114, 35, 28, 0.3);
+}
+
+/* Animacija za pojavljivanje slika */
+@keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.animate-scaleup {
+    animation: scaleUp 0.4s ease forwards;
+}
+
+/* --- Opisna sekcija (Tekst o svirkama/backu i Slika desno) --- */
+.description-section {
+    display: flex;
+    flex-direction: column; /* Zadano za manje ekrane */
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff9e6;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(114, 35, 28, 0.2);
+    margin: 2rem auto;
+    max-width: 1200px; /* POVEĆANA ŠIRINA OVE SEKCJE */
+    gap: 40px;
+    transition: box-shadow 0.3s ease;
+}
+
+.description-section:hover {
+    box-shadow: 0 10px 25px rgba(114, 35, 28, 0.35);
+}
+
+.description-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.description-text h3 {
+    font-size: 2.3em;
+    color: #72231C;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #9b6f69cc;
+    font-weight: 700;
+}
+
+.description-text p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #5b3d35;
+    font-weight: 500;
+}
+
+.description-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(114, 35, 28, 0.3);
+    object-fit: cover;
+}
+
+/* --- Media Queries za responzivnost (Desktop/Tablet) --- */
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row; /* Tekst i slika u redu na desktopu */
+        justify-content: center; /* Centriraj ih unutar hero-section */
+        gap: 20px; /* Smanjen razmak između naslova i slike */
+    }
+
+    .hero-title {
+        /* VRLO MALI FONT-SIZE za naslov na desktopu */
+        font-size: 2.5em; /* Malen font na desktopu */
+        margin-bottom: 0;
+        text-align: right;
+        flex-shrink: 0;
+    }
+
+    .hero-image-side {
+        order: 2; /* Slika ide na desnu stranu */
+        margin-top: 0;
+    }
+
+    .description-section {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .description-text {
+        text-align: left;
+        order: 1;
+        margin-right: 40px;
+    }
+    .description-image {
+        order: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        /* VRLO MALI FONT-SIZE za naslov na vrlo velikim ekranima */
+        font-size: 3em; /* Minimalno povećanje za vrlo velike ekrane */
+    }
+}

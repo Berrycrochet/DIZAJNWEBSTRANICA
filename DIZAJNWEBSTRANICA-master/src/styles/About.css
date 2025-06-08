@@ -1,0 +1,134 @@
+/* --- Glavni wrapper za "O nama" stranicu --- */
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #6b4a43;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* --- Sekcija sa sadržajem (tekst + galerija) --- */
+.about-content-section {
+    display: flex;
+    flex-direction: column; /* Tekst iznad slika u svim rezolucijama */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff9e6;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(114, 35, 28, 0.25);
+    padding: 50px;
+    transition: box-shadow 0.3s ease;
+}
+
+.about-content-section:hover {
+    box-shadow: 0 12px 30px rgba(114, 35, 28, 0.4);
+}
+
+/* --- Kontejner za tekst --- */
+.about-text-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text-container h2 {
+    font-size: 3.2em;
+    color: #72231C;
+    margin-bottom: 25px;
+    text-shadow: 1.5px 1.5px 3px #9b6f69cc;
+    font-weight: 700;
+}
+
+.about-text-container p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #5b3d35;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* --- Slika unutar teksta oko koje teče sadržaj --- */
+.inline-image {
+    float: left;
+    margin: 0 20px 20px 0;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .inline-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+}
+
+/* --- Galerija slika --- */
+.about-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(114, 35, 28, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(114, 35, 28, 0.35);
+}
+
+/* --- Animacija za pojavljivanje --- */
+.animate-fadein {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Media Queries za veću responzivnost --- */
+@media (min-width: 768px) {
+    .about-content-section {
+        padding: 60px; /* Veći padding, ali zadržavamo vertikalni layout */
+    }
+
+    .about-text-container {
+        text-align: center; /* Ne vraćamo text-align na left */
+        margin: 0 auto;
+    }
+
+    .about-text-container h2 {
+        font-size: 3.8em;
+    }
+
+    .about-image-gallery {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-content-section {
+        padding: 80px;
+    }
+
+    .about-text-container h2 {
+        font-size: 4.5em;
+    }
+}

@@ -1,0 +1,71 @@
+:root {
+  --bg-main: #FAF0D7;
+  --red-dark: #72231C;
+  --red-light: #CD3333;
+  --blue-dark: #036977;
+  --white: #ffffff;
+}
+.pricing-container {
+  max-width: 600px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 25px 30px;
+  background: var(--bg-main);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(114, 35, 28, 0.15);
+  color: var(--red-dark);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  color: var(--red-dark);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.pricing-category {
+  margin-bottom: 30px;
+  border-bottom: 1.5px solid var(--red-light);
+  padding-bottom: 18px;
+}
+
+.pricing-category h2 {
+  color: var(--red-light);
+  margin-bottom: 18px;
+  border-left: 6px solid var(--red-dark);
+  padding-left: 14px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 1.05rem;
+  border-bottom: 1px dotted var(--red-light);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.pricing-item:hover {
+  background-color: var(--red-light);
+  color: var(--white);
+  border-bottom-color: var(--red-dark);
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item-name {
+  font-weight: 600;
+  color: inherit; /* koristi boju roditelja, pa hover menja */
+}
+
+.item-price {
+  font-weight: 700;
+  color: var(--blue-dark);
+  min-width: 70px;
+  text-align: right;
+}

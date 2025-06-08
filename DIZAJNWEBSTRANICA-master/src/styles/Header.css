@@ -1,0 +1,200 @@
+.header {
+  background-color: #72231C; /* Tamno crvena/bordo */
+  padding: 1rem 2rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center; /* Vertikalno centriranje svih elemenata unutar navigaiconog bara */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem; /* Razmak između linkova */
+}
+
+.nav-center {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  user-select: none;
+  flex-grow: 1; /* Omogućava da zauzme dostupan prostor */
+  text-align: center;
+  font-family: 'Jockey One', sans-serif;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.5rem; /* Padding za sve standardne nav linkove */
+  position: relative;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex; /* Koristi flex za bolje vertikalno poravnanje teksta */
+  align-items: center;
+}
+
+/* Stilovi za aktivni link i hover efekat */
+.nav-link.active,
+.nav-link:hover {
+  border: 2px solid #036977; /* Okvir umesto boje teksta */
+  border-radius: 4px;
+  color: white;
+  background-color: #036977; /* Ispunjen okvir */
+  padding: 0.3rem 0.7rem; /* Malo veći padding na hoveru zbog border-a */
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Dropdown kontejner */
+.dropdown {
+  position: relative;
+  display: inline-flex; /* Ponaša se kao inline element ali omogućava flex kontrolu */
+  align-items: center; /* Vertikalno centriraj sve unutar dropdown kontejnera */
+}
+
+/* Stilovi za "Prijava" dugme/link unutar dropdowna (.nav-link se već primjenjuje) */
+.button-dropdown {
+  background: none;
+  border: 2px solid #72231C; /* Trenutna boja granice */
+  color: white;
+  padding: 0.3rem 0.7rem; /* Uskladi s paddingom hover stanja nav-linka */
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  
+  /* --- Spuštanje "Prijava" linka (ako je potrebno za poravnanje) --- */
+  margin-top: 2px; /* Eksperimentiraj s ovom vrijednošću (npr. 2px, 3px, itd.) */
+  line-height: normal; /* Da ne smeta poravnanju */
+  display: flex; /* Osiguraj flex za vertikalno poravnanje teksta unutar dugmeta */
+  align-items: center;
+}
+
+.button-dropdown:hover {
+  background-color: #036977;
+  border-color: #036977;
+  color: white;
+}
+
+/* Sadržaj dropdown menija */
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  background-color: #72231C; /* Boja pozadine dropdown menija (tamno crvena/bordo) */
+  border-radius: 4px;
+  margin-top: 0.4rem; /* Razmak između "Prijava" linka i menija */
+  min-width: 140px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* Inicijalno sakriveno, JS kontrolira 'show' klasu */
+}
+
+/* Klasa za prikazivanje dropdowna putem JavaScripta */
+.dropdown-content.show {
+    display: block;
+}
+
+/* Stilovi za linkove unutar dropdown menija */
+.dropdown-link {
+  color: white;
+  padding: 0.5rem 1rem;
+  display: block; /* Važno za svaki link da zauzima cijelu širinu */
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #036977; /* Plava/zelena na hoveru */
+  color: rgb(226, 86, 86);
+}
+/* Burger dugme za manje ekrane */
+.burger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sakrij linkove po defaultu na mobilnim uređajima */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Responsive pravila */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #72231C;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-center {
+    order: -1; /* Ime firme na vrh menija */
+    margin-bottom: 1rem;
+    text-align: left;
+   
+  }
+}
+.logout-button {
+  background-color: #72231C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px; /* malo više odozdo i odozgo */
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  text-align: center; /* centrira tekst u dugmetu */
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* razmak iznad dugmeta */
+  display: block;
+  text-align: left;
+padding-left: 15px;
+
+}
+
+.logout-button:hover {
+  background-color: #c9302c;
+}
+.dropdown-content {
+  position: absolute; /* da se dropdown pozicionira u odnosu na roditelja */
+  top: 100%; /* pada tačno ispod dugmeta koje ga otvara */
+  left: 0;
+  background-color: #72231C;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  min-width: 150px;
+  z-index: 1000; /* da je iznad ostalih elemenata na stranici */
+  padding: 5px 0;
+  margin-top: 5px; /* mala pauza od dugmeta */
+}
